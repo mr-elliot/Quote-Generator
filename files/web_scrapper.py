@@ -1,19 +1,7 @@
 from bs4 import BeautifulSoup
 import requests as req
 
-# urlx = "https://www.brainyquote.com/topics/technology-quotes"
-# resp = req.get(urlx)
-# # print(resp.text)
-#
-# soup = BeautifulSoup(resp.text, 'html.parser')
-# dic = soup.find('div', id = 'quotesList')
-# d2 = dic.find('div', id = 'qpos_1_1')
 
-# d2 = soup.find('div', id = 'qpos_1_6')
-# d3 = d2.find_all('a', title="view quote")
-# d4 = d2.find('a', title="view author")
-# print(d3[-1].text)
-# print(d4.text)
 def ScrapIt():
     lt = []
     for j in range(1, 17):      # to get each pages number
