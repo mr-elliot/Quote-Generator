@@ -11,7 +11,7 @@ def connect():
         print('Connecting to the PostgreSQL database...')
         conn = psycopg2.connect(**params)
         cur = conn.cursor()
-        ##################################################################################
+
         cur.execute("create table quote_db( quote varchar, author varchar)")
         conn.commit()
 
@@ -22,11 +22,13 @@ def connect():
             quot, auth = i.replace("'", "").split('--')
             st = f"insert into quote_db values('{quot}', '{auth}')"
             cur.execute(st)
+            # update the changes made in database            
             conn.commit()
+           
+        # selecting some random quote and print it 
         cur.execute("SELECT * FROM quote_db OFFSET floor(random() * (SELECT COUNT(*) FROM quote_db)) LIMIT 1")
-        print(cur.fetchon())
+        print(cur.fetchone())
 
-        #################################################################################
         conn.commit()
         cur.close()
     except (Exception, psycopg2.DatabaseError) as error:
@@ -39,7 +41,4 @@ def connect():
 
 if __name__ == '__main__':
     connect()
-
-
-
 
