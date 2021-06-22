@@ -1,6 +1,6 @@
 # Quote-Generator
 
-Store popular technical quotes in database and retrieve it randomly by using Python3 and PostgreSQL.
+Store popular technical quotes in database and retrieve it randomly by using Python3 and PostgreSQL with some basic web scraping technology.
 
 Firstly create a database using pgAdmin4 and connect to the database and now run the file ```quote_gen.py``` it will take some time to complete.
 
